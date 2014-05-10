@@ -1,5 +1,8 @@
 package com.epam.training.PaymentMachine;
 
+import java.util.HashMap;
+import java.util.Map;
+
 import org.testng.Assert;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
@@ -90,14 +93,15 @@ public class PaymentMachineTest {
 		Assert.assertEquals(paymentMachine.getPayedAmount(), 0);
 		
 		paymentMachine.addCoin(Coin.C2000);
+		paymentMachine.addCoin(Coin.C2000);
+		paymentMachine.addCoin(Coin.C2000);
 		paymentMachine.addCoin(Coin.C1000);
 
-		Assert.assertEquals(paymentMachine.getPayedAmount(), 2000);
+		Assert.assertEquals(paymentMachine.getPayedAmount(), 7000);
 		
 		paymentMachine.addCoin(Coin.C500);
 
-		Assert.assertEquals(paymentMachine.getPayedAmount(), 2500);
-
+		Assert.assertEquals(paymentMachine.getPayedAmount(), 7500);
 	}
 	
 	@Test
@@ -116,7 +120,11 @@ public class PaymentMachineTest {
 	}
 
 	@Test
-	public void testClosePayment() {
+	public void testClosePayment() throws Exception {
+		Ticket ticket = new Ticket(1);
+		
+		paymentMachine.startPayment(ticket);
+		
 		paymentMachine.addCoin(Coin.C1000);
 		paymentMachine.addCoin(Coin.C1000);
 		paymentMachine.addCoin(Coin.C500);
@@ -131,19 +139,20 @@ public class PaymentMachineTest {
 
 	@Test
 	public void testPaymentChange() throws Exception {
-		Ticket ticket = paymentMachine.getActualTicket();
+		Ticket ticket = new Ticket(1);
+
+		paymentMachine.startPayment(ticket);
+		
 		long oldStorageAmount = paymentMachine.getStorageAmount();
 		
 		paymentMachine.addCoin(Coin.C1000);
-		paymentMachine.addCoin(Coin.C1000);
-		paymentMachine.addCoin(Coin.C10000);
 		paymentMachine.addCoin(Coin.C10000);
 
-		Assert.assertEquals(paymentMachine.getPayedAmount(), 22000);
+		Assert.assertEquals(paymentMachine.getPayedAmount(), 11000);
 
 		paymentMachine.closePayment();
 
-		Assert.assertEquals(paymentMachine.getStorageAmount() - ticket.getAmount(), oldStorageAmount);
+		Assert.assertEquals(paymentMachine.getStorageAmount() + ticket.getAmount(), oldStorageAmount);
 		Assert.assertEquals(paymentMachine.getPayedAmount(), 0);
 		Assert.assertEquals(paymentMachine.getChangedAmount(), 0);
 	}

@@ -9,7 +9,7 @@ public class Ticket {
 	private Date ticketDate;
 	private long amount = 0;
 	private long change = 0;
-	private boolean payed = false;
+	private boolean paid = false;
 
 	
 	public Ticket(int ticketNumber) {
@@ -44,12 +44,12 @@ public class Ticket {
 		this.change = change;
 	}
 	
-	public boolean isPayed() {
-		return payed;
+	public boolean isPaid() {
+		return paid;
 	}
 
 	public void pay() {
-		this.payed = true;
+		this.paid = true;
 	}
 
 	@Override

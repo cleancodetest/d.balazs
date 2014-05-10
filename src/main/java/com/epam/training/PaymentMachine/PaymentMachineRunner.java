@@ -20,7 +20,6 @@ public class PaymentMachineRunner {
 			}
 			
 			paymentMachine.printAvailableCoins();
-			paymentMachine.printTicketPaymentInformations();
 			System.out.println("Please enter a ticket number: ");
 			
 			line = buffer.readLine();
@@ -37,7 +36,7 @@ public class PaymentMachineRunner {
 				int ticketNumber = Integer.parseInt(line);
 				Ticket ticket = new Ticket(ticketNumber);
 
-				paymentMachine.printTicketPaymentInformations();
+				paymentMachine.printTicketPaymentInformations(ticket);
 				
 				paymentMachine.startPayment(ticket);
 				

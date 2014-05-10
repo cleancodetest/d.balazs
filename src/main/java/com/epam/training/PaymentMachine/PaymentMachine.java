@@ -153,19 +153,15 @@ public class PaymentMachine implements PaymentMachineInterface {
 	public void addCoin(Coin coin) {
 		long newPieces = 0;
 
-		if (getPayedAmount() > 0) {
-			for (Map.Entry<Coin, Long> entry : bufferStorage.entrySet()) {
-				if (entry.getKey() == coin) {
-					Long entryPieces = entry.getValue();
-					newPieces = entryPieces + 1;
-				}
-			}
-			bufferStorage.remove(coin);
-		} else {
+		Long entryPieces = bufferStorage.get(coin); 
+		
+		if (entryPieces == null) {
 			newPieces = 1;
+			bufferStorage.put(coin, newPieces);
+		} else {
+			newPieces = entryPieces + 1;
+			bufferStorage.put(coin, newPieces);
 		}
-
-		bufferStorage.put(coin, newPieces);
 	}
 
 	public Coin getCoinByValue(String value) throws Exception {
@@ -273,9 +269,9 @@ public class PaymentMachine implements PaymentMachineInterface {
 	}
 	
 	private void clearTemporaryData() {
-		this.bufferStorage.clear();
-		this.changeStorage.clear();
-		this.actualTicket = null;
+		bufferStorage.clear();
+		changeStorage.clear();
+		actualTicket = null;
 	}
 	
 	private void generateInitialMoneyStorage(long initialAmount) throws Exception {
