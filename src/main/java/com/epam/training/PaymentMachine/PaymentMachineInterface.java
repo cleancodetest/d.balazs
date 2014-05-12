@@ -29,7 +29,7 @@ public interface PaymentMachineInterface {
 	
 	public long calculateChangeAmount();
 
-	public void generateChangeCoins() throws Exception;
+	public void executePayment() throws Exception;
 	
 	public void addCoin(Coin coin);
 	

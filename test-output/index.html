@@ -48,7 +48,7 @@
               <ul>
                 <li>
                   <a href="#" class="navigator-link " panel-name="test-xml-Default_suite">
-                    <span>C:\Users\Administrator\AppData\Local\Temp\1\testng-eclipse--1205870936\testng-customsuite.xml</span>
+                    <span>C:\Users\Administrator\AppData\Local\Temp\1\testng-eclipse-2061468178\testng-customsuite.xml</span>
                   </a> <!-- navigator-link  -->
                 </li>
                 <li>
@@ -90,7 +90,7 @@
               <div class="suite-section-content">
                 <ul>
                   <li>
-                    <span class="method-stats">14 methods, 1 failed,   13 passed</span>
+                    <span class="method-stats">16 methods, 1 failed,   15 passed</span>
                   </li>
                   <li>
                     <span class="method-list-title failed">Failed methods</span>
@@ -101,7 +101,7 @@
                     <div class="method-list-content failed suite-Default_suite">
                       <span>
                         <img width="3%" src="failed.png"/>
-                        <a href="#" class="method navigator-link" panel-name="suite-Default_suite" title="com.epam.training.PaymentMachine.PaymentMachineTest" hash-for-method="testPaymentChange">testPaymentChange</a> <!-- method navigator-link -->
+                        <a href="#" class="method navigator-link" panel-name="suite-Default_suite" title="com.epam.training.PaymentMachine.PaymentMachineTest" hash-for-method="testExecutePayment">testExecutePayment</a> <!-- method navigator-link -->
                       </span>
                       <br/>
                     </div> <!-- method-list-content failed suite-Default_suite -->
@@ -121,6 +121,16 @@
                       <span>
                         <img width="3%" src="passed.png"/>
                         <a href="#" class="method navigator-link" panel-name="suite-Default_suite" title="com.epam.training.PaymentMachine.PaymentMachineTest" hash-for-method="testCancelPayment">testCancelPayment</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img width="3%" src="passed.png"/>
+                        <a href="#" class="method navigator-link" panel-name="suite-Default_suite" title="com.epam.training.PaymentMachine.PaymentMachineTest" hash-for-method="testChangeAmount">testChangeAmount</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img width="3%" src="passed.png"/>
+                        <a href="#" class="method navigator-link" panel-name="suite-Default_suite" title="com.epam.training.PaymentMachine.PaymentMachineTest" hash-for-method="testChangedAmount">testChangedAmount</a> <!-- method navigator-link -->
                       </span>
                       <br/>
                       <span>
@@ -198,16 +208,16 @@
             <div class="main-panel-content rounded-window-bottom">
               <div class="method">
                 <div class="method-content">
-                  <a name="testPaymentChange">
-                  </a> <!-- testPaymentChange -->
-                  <span class="method-name">testPaymentChange</span>
-                  <div class="stack-trace">java.lang.AssertionError: expected [21125] but found [31275]
+                  <a name="testExecutePayment">
+                  </a> <!-- testExecutePayment -->
+                  <span class="method-name">testExecutePayment</span>
+                  <div class="stack-trace">java.lang.AssertionError: expected [23325] but found [23500]
 	at org.testng.Assert.fail(Assert.java:94)
 	at org.testng.Assert.failNotEquals(Assert.java:494)
 	at org.testng.Assert.assertEquals(Assert.java:123)
 	at org.testng.Assert.assertEquals(Assert.java:265)
 	at org.testng.Assert.assertEquals(Assert.java:275)
-	at com.epam.training.PaymentMachine.PaymentMachineTest.testPaymentChange(PaymentMachineTest.java:155)
+	at com.epam.training.PaymentMachine.PaymentMachineTest.testExecutePayment(PaymentMachineTest.java:193)
 	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
 	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
@@ -256,6 +266,20 @@
                   <a name="testCancelPayment">
                   </a> <!-- testCancelPayment -->
                   <span class="method-name">testCancelPayment</span>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="testChangeAmount">
+                  </a> <!-- testChangeAmount -->
+                  <span class="method-name">testChangeAmount</span>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="testChangedAmount">
+                  </a> <!-- testChangedAmount -->
+                  <span class="method-name">testChangedAmount</span>
                 </div> <!-- method-content -->
               </div> <!-- method -->
               <div class="method">
@@ -340,7 +364,7 @@
         </div> <!-- panel Default_suite -->
         <div panel-name="test-xml-Default_suite" class="panel">
           <div class="main-panel-header rounded-window-top">
-            <span class="header-content">C:\Users\Administrator\AppData\Local\Temp\1\testng-eclipse--1205870936\testng-customsuite.xml</span>
+            <span class="header-content">C:\Users\Administrator\AppData\Local\Temp\1\testng-eclipse-2061468178\testng-customsuite.xml</span>
           </div> <!-- main-panel-header rounded-window-top -->
           <div class="main-panel-content rounded-window-bottom">
             <pre>
@@ -389,25 +413,25 @@ data.addColumn('number', 'Number');
 data.addColumn('string', 'Method');
 data.addColumn('string', 'Class');
 data.addColumn('number', 'Time (ms)');
-data.addRows(14);
+data.addRows(16);
 data.setCell(0, 0, 0)
 data.setCell(0, 1, 'testAddCoin')
 data.setCell(0, 2, 'com.epam.training.PaymentMachine.PaymentMachineTest')
-data.setCell(0, 3, 11);
+data.setCell(0, 3, 14);
 data.setCell(1, 0, 1)
-data.setCell(1, 1, 'testInvalidCoinValue')
+data.setCell(1, 1, 'testExecutePayment')
 data.setCell(1, 2, 'com.epam.training.PaymentMachine.PaymentMachineTest')
-data.setCell(1, 3, 3);
+data.setCell(1, 3, 4);
 data.setCell(2, 0, 2)
-data.setCell(2, 1, 'testPaymentChange')
+data.setCell(2, 1, 'testHasOngoingPayment')
 data.setCell(2, 2, 'com.epam.training.PaymentMachine.PaymentMachineTest')
 data.setCell(2, 3, 3);
 data.setCell(3, 0, 3)
-data.setCell(3, 1, 'testCancelPayment')
+data.setCell(3, 1, 'testInitialStoredAmount')
 data.setCell(3, 2, 'com.epam.training.PaymentMachine.PaymentMachineTest')
-data.setCell(3, 3, 2);
+data.setCell(3, 3, 3);
 data.setCell(4, 0, 4)
-data.setCell(4, 1, 'testIsTicketAlreadyExists')
+data.setCell(4, 1, 'testInvalidInitialAmount')
 data.setCell(4, 2, 'com.epam.training.PaymentMachine.PaymentMachineTest')
 data.setCell(4, 3, 2);
 data.setCell(5, 0, 5)
@@ -415,42 +439,50 @@ data.setCell(5, 1, 'testStartPayment')
 data.setCell(5, 2, 'com.epam.training.PaymentMachine.PaymentMachineTest')
 data.setCell(5, 3, 1);
 data.setCell(6, 0, 6)
-data.setCell(6, 1, 'testInvalidInitialAmount')
+data.setCell(6, 1, 'testHasNoOngoingPayment')
 data.setCell(6, 2, 'com.epam.training.PaymentMachine.PaymentMachineTest')
 data.setCell(6, 3, 1);
 data.setCell(7, 0, 7)
-data.setCell(7, 1, 'testMachineHasAvailableCoins')
+data.setCell(7, 1, 'testGetActualPaymentTicket')
 data.setCell(7, 2, 'com.epam.training.PaymentMachine.PaymentMachineTest')
 data.setCell(7, 3, 1);
 data.setCell(8, 0, 8)
-data.setCell(8, 1, 'testValidCoinValue')
+data.setCell(8, 1, 'testIsTicketAlreadyExists')
 data.setCell(8, 2, 'com.epam.training.PaymentMachine.PaymentMachineTest')
 data.setCell(8, 3, 1);
 data.setCell(9, 0, 9)
-data.setCell(9, 1, 'testHasNoOngoingPayment')
+data.setCell(9, 1, 'testCancelPayment')
 data.setCell(9, 2, 'com.epam.training.PaymentMachine.PaymentMachineTest')
 data.setCell(9, 3, 1);
 data.setCell(10, 0, 10)
-data.setCell(10, 1, 'testHasOngoingPayment')
+data.setCell(10, 1, 'testInvalidCoinValue')
 data.setCell(10, 2, 'com.epam.training.PaymentMachine.PaymentMachineTest')
 data.setCell(10, 3, 1);
 data.setCell(11, 0, 11)
-data.setCell(11, 1, 'testGetActualPaymentTicket')
+data.setCell(11, 1, 'testValidCoinValue')
 data.setCell(11, 2, 'com.epam.training.PaymentMachine.PaymentMachineTest')
 data.setCell(11, 3, 1);
 data.setCell(12, 0, 12)
-data.setCell(12, 1, 'testClosePayment')
+data.setCell(12, 1, 'testMachineHasAvailableCoins')
 data.setCell(12, 2, 'com.epam.training.PaymentMachine.PaymentMachineTest')
-data.setCell(12, 3, 0);
+data.setCell(12, 3, 1);
 data.setCell(13, 0, 13)
-data.setCell(13, 1, 'testInitialStoredAmount')
+data.setCell(13, 1, 'testChangeAmount')
 data.setCell(13, 2, 'com.epam.training.PaymentMachine.PaymentMachineTest')
-data.setCell(13, 3, 0);
+data.setCell(13, 3, 1);
+data.setCell(14, 0, 14)
+data.setCell(14, 1, 'testChangedAmount')
+data.setCell(14, 2, 'com.epam.training.PaymentMachine.PaymentMachineTest')
+data.setCell(14, 3, 1);
+data.setCell(15, 0, 15)
+data.setCell(15, 1, 'testClosePayment')
+data.setCell(15, 2, 'com.epam.training.PaymentMachine.PaymentMachineTest')
+data.setCell(15, 3, 0);
 window.suiteTableData['Default_suite']= { tableData: data, tableDiv: 'times-div-Default_suite'}
 return data;
 }
               </script>
-              <span class="suite-total-time">Total running time: 28 ms</span>
+              <span class="suite-total-time">Total running time: 36 ms</span>
               <div id="times-div-Default_suite">
               </div> <!-- times-div-Default_suite -->
             </div> <!-- times-div -->
@@ -483,113 +515,129 @@ return data;
               </div> <!-- configuration-method before -->
               <div class="test-method">
                 <span class="method-name">testAddCoin</span>
-                <span class="method-start">13 ms</span>
+                <span class="method-start">20 ms</span>
               </div> <!-- test-method -->
               <div class="configuration-method before">
                 <span class="method-name">setup</span>
-                <span class="method-start">26 ms</span>
+                <span class="method-start">36 ms</span>
               </div> <!-- configuration-method before -->
               <div class="test-method">
                 <span class="method-name">testCancelPayment</span>
-                <span class="method-start">26 ms</span>
+                <span class="method-start">36 ms</span>
               </div> <!-- test-method -->
               <div class="configuration-method before">
                 <span class="method-name">setup</span>
-                <span class="method-start">28 ms</span>
+                <span class="method-start">37 ms</span>
+              </div> <!-- configuration-method before -->
+              <div class="test-method">
+                <span class="method-name">testChangeAmount</span>
+                <span class="method-start">37 ms</span>
+              </div> <!-- test-method -->
+              <div class="configuration-method before">
+                <span class="method-name">setup</span>
+                <span class="method-start">39 ms</span>
+              </div> <!-- configuration-method before -->
+              <div class="test-method">
+                <span class="method-name">testChangedAmount</span>
+                <span class="method-start">39 ms</span>
+              </div> <!-- test-method -->
+              <div class="configuration-method before">
+                <span class="method-name">setup</span>
+                <span class="method-start">41 ms</span>
               </div> <!-- configuration-method before -->
               <div class="test-method">
                 <span class="method-name">testClosePayment</span>
-                <span class="method-start">29 ms</span>
+                <span class="method-start">41 ms</span>
               </div> <!-- test-method -->
               <div class="configuration-method before">
                 <span class="method-name">setup</span>
-                <span class="method-start">30 ms</span>
-              </div> <!-- configuration-method before -->
-              <div class="test-method">
-                <span class="method-name">testGetActualPaymentTicket</span>
-                <span class="method-start">30 ms</span>
-              </div> <!-- test-method -->
-              <div class="configuration-method before">
-                <span class="method-name">setup</span>
-                <span class="method-start">32 ms</span>
-              </div> <!-- configuration-method before -->
-              <div class="test-method">
-                <span class="method-name">testHasNoOngoingPayment</span>
-                <span class="method-start">32 ms</span>
-              </div> <!-- test-method -->
-              <div class="configuration-method before">
-                <span class="method-name">setup</span>
-                <span class="method-start">33 ms</span>
-              </div> <!-- configuration-method before -->
-              <div class="test-method">
-                <span class="method-name">testHasOngoingPayment</span>
-                <span class="method-start">34 ms</span>
-              </div> <!-- test-method -->
-              <div class="configuration-method before">
-                <span class="method-name">setup</span>
-                <span class="method-start">36 ms</span>
-              </div> <!-- configuration-method before -->
-              <div class="test-method">
-                <span class="method-name">testInitialStoredAmount</span>
-                <span class="method-start">36 ms</span>
-              </div> <!-- test-method -->
-              <div class="configuration-method before">
-                <span class="method-name">setup</span>
-                <span class="method-start">38 ms</span>
-              </div> <!-- configuration-method before -->
-              <div class="test-method">
-                <span class="method-name">testInvalidCoinValue</span>
-                <span class="method-start">38 ms</span>
-              </div> <!-- test-method -->
-              <div class="configuration-method before">
-                <span class="method-name">setup</span>
-                <span class="method-start">45 ms</span>
-              </div> <!-- configuration-method before -->
-              <div class="test-method">
-                <span class="method-name">testInvalidInitialAmount</span>
-                <span class="method-start">46 ms</span>
-              </div> <!-- test-method -->
-              <div class="configuration-method before">
-                <span class="method-name">setup</span>
-                <span class="method-start">49 ms</span>
-              </div> <!-- configuration-method before -->
-              <div class="test-method">
-                <span class="method-name">testIsTicketAlreadyExists</span>
-                <span class="method-start">50 ms</span>
-              </div> <!-- test-method -->
-              <div class="configuration-method before">
-                <span class="method-name">setup</span>
-                <span class="method-start">54 ms</span>
-              </div> <!-- configuration-method before -->
-              <div class="test-method">
-                <span class="method-name">testMachineHasAvailableCoins</span>
-                <span class="method-start">54 ms</span>
-              </div> <!-- test-method -->
-              <div class="configuration-method before">
-                <span class="method-name">setup</span>
-                <span class="method-start">55 ms</span>
+                <span class="method-start">42 ms</span>
               </div> <!-- configuration-method before -->
               <div class="test-method">
                 <img src="failed.png">
                 </img>
-                <span class="method-name">testPaymentChange</span>
-                <span class="method-start">55 ms</span>
+                <span class="method-name">testExecutePayment</span>
+                <span class="method-start">42 ms</span>
               </div> <!-- test-method -->
               <div class="configuration-method before">
                 <span class="method-name">setup</span>
-                <span class="method-start">66 ms</span>
+                <span class="method-start">52 ms</span>
+              </div> <!-- configuration-method before -->
+              <div class="test-method">
+                <span class="method-name">testGetActualPaymentTicket</span>
+                <span class="method-start">52 ms</span>
+              </div> <!-- test-method -->
+              <div class="configuration-method before">
+                <span class="method-name">setup</span>
+                <span class="method-start">54 ms</span>
+              </div> <!-- configuration-method before -->
+              <div class="test-method">
+                <span class="method-name">testHasNoOngoingPayment</span>
+                <span class="method-start">54 ms</span>
+              </div> <!-- test-method -->
+              <div class="configuration-method before">
+                <span class="method-name">setup</span>
+                <span class="method-start">55 ms</span>
+              </div> <!-- configuration-method before -->
+              <div class="test-method">
+                <span class="method-name">testHasOngoingPayment</span>
+                <span class="method-start">59 ms</span>
+              </div> <!-- test-method -->
+              <div class="configuration-method before">
+                <span class="method-name">setup</span>
+                <span class="method-start">64 ms</span>
+              </div> <!-- configuration-method before -->
+              <div class="test-method">
+                <span class="method-name">testInitialStoredAmount</span>
+                <span class="method-start">65 ms</span>
+              </div> <!-- test-method -->
+              <div class="configuration-method before">
+                <span class="method-name">setup</span>
+                <span class="method-start">72 ms</span>
+              </div> <!-- configuration-method before -->
+              <div class="test-method">
+                <span class="method-name">testInvalidCoinValue</span>
+                <span class="method-start">74 ms</span>
+              </div> <!-- test-method -->
+              <div class="configuration-method before">
+                <span class="method-name">setup</span>
+                <span class="method-start">78 ms</span>
+              </div> <!-- configuration-method before -->
+              <div class="test-method">
+                <span class="method-name">testInvalidInitialAmount</span>
+                <span class="method-start">79 ms</span>
+              </div> <!-- test-method -->
+              <div class="configuration-method before">
+                <span class="method-name">setup</span>
+                <span class="method-start">202 ms</span>
+              </div> <!-- configuration-method before -->
+              <div class="test-method">
+                <span class="method-name">testIsTicketAlreadyExists</span>
+                <span class="method-start">202 ms</span>
+              </div> <!-- test-method -->
+              <div class="configuration-method before">
+                <span class="method-name">setup</span>
+                <span class="method-start">204 ms</span>
+              </div> <!-- configuration-method before -->
+              <div class="test-method">
+                <span class="method-name">testMachineHasAvailableCoins</span>
+                <span class="method-start">204 ms</span>
+              </div> <!-- test-method -->
+              <div class="configuration-method before">
+                <span class="method-name">setup</span>
+                <span class="method-start">206 ms</span>
               </div> <!-- configuration-method before -->
               <div class="test-method">
                 <span class="method-name">testStartPayment</span>
-                <span class="method-start">66 ms</span>
+                <span class="method-start">206 ms</span>
               </div> <!-- test-method -->
               <div class="configuration-method before">
                 <span class="method-name">setup</span>
-                <span class="method-start">67 ms</span>
+                <span class="method-start">207 ms</span>
               </div> <!-- configuration-method before -->
               <div class="test-method">
                 <span class="method-name">testValidCoinValue</span>
-                <span class="method-start">67 ms</span>
+                <span class="method-start">208 ms</span>
               </div> <!-- test-method -->
           </div> <!-- main-panel-content rounded-window-bottom -->
         </div> <!-- panel -->

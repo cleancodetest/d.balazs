@@ -55,11 +55,11 @@ function toggleAllBoxes() {
 <body>
 <h2 align='center'>Default test</h2><table border='1' align="center">
 <tr>
-<td>Tests passed/Failed/Skipped:</td><td>13/1/0</td>
+<td>Tests passed/Failed/Skipped:</td><td>15/1/0</td>
 </tr><tr>
-<td>Started on:</td><td>Sat May 10 16:40:19 CEST 2014</td>
+<td>Started on:</td><td>Mon May 12 16:59:30 CEST 2014</td>
 </tr>
-<tr><td>Total time:</td><td>0 seconds (90 ms)</td>
+<tr><td>Total time:</td><td>0 seconds (231 ms)</td>
 </tr><tr>
 <td>Included groups:</td><td></td>
 </tr><tr>
@@ -75,14 +75,14 @@ function toggleAllBoxes() {
 <td><b>Instance</b></td>
 </tr>
 <tr>
-<td title='com.epam.training.PaymentMachine.PaymentMachineTest.testPaymentChange()'><b>testPaymentChange</b><br>Test class: com.epam.training.PaymentMachine.PaymentMachineTest</td>
-<td><div><pre>java.lang.AssertionError: expected [21125] but found [31275]
+<td title='com.epam.training.PaymentMachine.PaymentMachineTest.testExecutePayment()'><b>testExecutePayment</b><br>Test class: com.epam.training.PaymentMachine.PaymentMachineTest</td>
+<td><div><pre>java.lang.AssertionError: expected [23325] but found [23500]
 	at org.testng.Assert.fail(Assert.java:94)
 	at org.testng.Assert.failNotEquals(Assert.java:494)
 	at org.testng.Assert.assertEquals(Assert.java:123)
 	at org.testng.Assert.assertEquals(Assert.java:265)
 	at org.testng.Assert.assertEquals(Assert.java:275)
-	at com.epam.training.PaymentMachine.PaymentMachineTest.testPaymentChange(PaymentMachineTest.java:155)
+	at com.epam.training.PaymentMachine.PaymentMachineTest.testExecutePayment(PaymentMachineTest.java:193)
 	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
 	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
@@ -107,14 +107,14 @@ function toggleAllBoxes() {
 	at org.testng.remote.RemoteTestNG.run(RemoteTestNG.java:111)
 	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:204)
 	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:175)
-</pre></div><a href='#' onClick='toggleBox("stack-trace356473385", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
-<div class='stack-trace' id='stack-trace356473385'><pre>java.lang.AssertionError: expected [21125] but found [31275]
+</pre></div><a href='#' onClick='toggleBox("stack-trace940060004", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace940060004'><pre>java.lang.AssertionError: expected [23325] but found [23500]
 	at org.testng.Assert.fail(Assert.java:94)
 	at org.testng.Assert.failNotEquals(Assert.java:494)
 	at org.testng.Assert.assertEquals(Assert.java:123)
 	at org.testng.Assert.assertEquals(Assert.java:265)
 	at org.testng.Assert.assertEquals(Assert.java:275)
-	at com.epam.training.PaymentMachine.PaymentMachineTest.testPaymentChange(PaymentMachineTest.java:155)
+	at com.epam.training.PaymentMachine.PaymentMachineTest.testExecutePayment(PaymentMachineTest.java:193)
 	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
 	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
@@ -161,6 +161,16 @@ function toggleAllBoxes() {
 <td>0</td>
 <td>com.epam.training.PaymentMachine.PaymentMachineTest@6f79caec</td></tr>
 <tr>
+<td title='com.epam.training.PaymentMachine.PaymentMachineTest.testChangeAmount()'><b>testChangeAmount</b><br>Test class: com.epam.training.PaymentMachine.PaymentMachineTest</td>
+<td></td>
+<td>0</td>
+<td>com.epam.training.PaymentMachine.PaymentMachineTest@6f79caec</td></tr>
+<tr>
+<td title='com.epam.training.PaymentMachine.PaymentMachineTest.testChangedAmount()'><b>testChangedAmount</b><br>Test class: com.epam.training.PaymentMachine.PaymentMachineTest</td>
+<td></td>
+<td>0</td>
+<td>com.epam.training.PaymentMachine.PaymentMachineTest@6f79caec</td></tr>
+<tr>
 <td title='com.epam.training.PaymentMachine.PaymentMachineTest.testClosePayment()'><b>testClosePayment</b><br>Test class: com.epam.training.PaymentMachine.PaymentMachineTest</td>
 <td></td>
 <td>0</td>
@@ -188,8 +198,8 @@ function toggleAllBoxes() {
 <tr>
 <td title='com.epam.training.PaymentMachine.PaymentMachineTest.testInvalidCoinValue()'><b>testInvalidCoinValue</b><br>Test class: com.epam.training.PaymentMachine.PaymentMachineTest</td>
 <td><div><pre>com.epam.training.PaymentMachine.InvalidCoinException
-	at com.epam.training.PaymentMachine.PaymentMachine.getCoinByValue(PaymentMachine.java:174)
-	at com.epam.training.PaymentMachine.PaymentMachineTest.testInvalidCoinValue(PaymentMachineTest.java:84)
+	at com.epam.training.PaymentMachine.PaymentMachine.getCoinByValue(PaymentMachine.java:160)
+	at com.epam.training.PaymentMachine.PaymentMachineTest.testInvalidCoinValue(PaymentMachineTest.java:81)
 	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
 	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
@@ -214,10 +224,10 @@ function toggleAllBoxes() {
 	at org.testng.remote.RemoteTestNG.run(RemoteTestNG.java:111)
 	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:204)
 	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:175)
-</pre></div><a href='#' onClick='toggleBox("stack-trace2008362258", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
-<div class='stack-trace' id='stack-trace2008362258'><pre>com.epam.training.PaymentMachine.InvalidCoinException
-	at com.epam.training.PaymentMachine.PaymentMachine.getCoinByValue(PaymentMachine.java:174)
-	at com.epam.training.PaymentMachine.PaymentMachineTest.testInvalidCoinValue(PaymentMachineTest.java:84)
+</pre></div><a href='#' onClick='toggleBox("stack-trace1915058446", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace1915058446'><pre>com.epam.training.PaymentMachine.InvalidCoinException
+	at com.epam.training.PaymentMachine.PaymentMachine.getCoinByValue(PaymentMachine.java:160)
+	at com.epam.training.PaymentMachine.PaymentMachineTest.testInvalidCoinValue(PaymentMachineTest.java:81)
 	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
 	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
@@ -248,9 +258,9 @@ function toggleAllBoxes() {
 <tr>
 <td title='com.epam.training.PaymentMachine.PaymentMachineTest.testInvalidInitialAmount()'><b>testInvalidInitialAmount</b><br>Test class: com.epam.training.PaymentMachine.PaymentMachineTest</td>
 <td><div><pre>com.epam.training.PaymentMachine.InvalidAmountException
-	at com.epam.training.PaymentMachine.PaymentMachine.generateInitialMoneyStorage(PaymentMachine.java:279)
+	at com.epam.training.PaymentMachine.PaymentMachine.generateInitialMoneyStorage(PaymentMachine.java:300)
 	at com.epam.training.PaymentMachine.PaymentMachine.&lt;init&gt;(PaymentMachine.java:21)
-	at com.epam.training.PaymentMachine.PaymentMachineTest.testInvalidInitialAmount(PaymentMachineTest.java:26)
+	at com.epam.training.PaymentMachine.PaymentMachineTest.testInvalidInitialAmount(PaymentMachineTest.java:23)
 	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
 	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
@@ -275,11 +285,11 @@ function toggleAllBoxes() {
 	at org.testng.remote.RemoteTestNG.run(RemoteTestNG.java:111)
 	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:204)
 	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:175)
-</pre></div><a href='#' onClick='toggleBox("stack-trace423031029", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
-<div class='stack-trace' id='stack-trace423031029'><pre>com.epam.training.PaymentMachine.InvalidAmountException
-	at com.epam.training.PaymentMachine.PaymentMachine.generateInitialMoneyStorage(PaymentMachine.java:279)
+</pre></div><a href='#' onClick='toggleBox("stack-trace592179046", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace592179046'><pre>com.epam.training.PaymentMachine.InvalidAmountException
+	at com.epam.training.PaymentMachine.PaymentMachine.generateInitialMoneyStorage(PaymentMachine.java:300)
 	at com.epam.training.PaymentMachine.PaymentMachine.&lt;init&gt;(PaymentMachine.java:21)
-	at com.epam.training.PaymentMachine.PaymentMachineTest.testInvalidInitialAmount(PaymentMachineTest.java:26)
+	at com.epam.training.PaymentMachine.PaymentMachineTest.testInvalidInitialAmount(PaymentMachineTest.java:23)
 	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
 	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
@@ -311,7 +321,7 @@ function toggleAllBoxes() {
 <td title='com.epam.training.PaymentMachine.PaymentMachineTest.testIsTicketAlreadyExists()'><b>testIsTicketAlreadyExists</b><br>Test class: com.epam.training.PaymentMachine.PaymentMachineTest</td>
 <td><div><pre>com.epam.training.PaymentMachine.TicketAlreadyExistException
 	at com.epam.training.PaymentMachine.PaymentMachine.startPayment(PaymentMachine.java:73)
-	at com.epam.training.PaymentMachine.PaymentMachineTest.testIsTicketAlreadyExists(PaymentMachineTest.java:55)
+	at com.epam.training.PaymentMachine.PaymentMachineTest.testIsTicketAlreadyExists(PaymentMachineTest.java:52)
 	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
 	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
@@ -336,10 +346,10 @@ function toggleAllBoxes() {
 	at org.testng.remote.RemoteTestNG.run(RemoteTestNG.java:111)
 	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:204)
 	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:175)
-</pre></div><a href='#' onClick='toggleBox("stack-trace1018937824", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
-<div class='stack-trace' id='stack-trace1018937824'><pre>com.epam.training.PaymentMachine.TicketAlreadyExistException
+</pre></div><a href='#' onClick='toggleBox("stack-trace2136344592", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace2136344592'><pre>com.epam.training.PaymentMachine.TicketAlreadyExistException
 	at com.epam.training.PaymentMachine.PaymentMachine.startPayment(PaymentMachine.java:73)
-	at com.epam.training.PaymentMachine.PaymentMachineTest.testIsTicketAlreadyExists(PaymentMachineTest.java:55)
+	at com.epam.training.PaymentMachine.PaymentMachineTest.testIsTicketAlreadyExists(PaymentMachineTest.java:52)
 	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
 	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)

@@ -1,17 +1,17 @@
 package com.epam.training.PaymentMachine;
 
-import java.util.HashMap;
 import java.util.HashSet;
 import java.util.Map;
 import java.util.Set;
+import java.util.TreeMap;
 
 public class PaymentMachine implements PaymentMachineInterface {
 
 	private Set<Ticket> tickets = new HashSet<Ticket>();
 	private Ticket actualTicket = null;
-	private Map<Coin, Long> moneyStorage = new HashMap<Coin, Long>();
-	private Map<Coin, Long> bufferStorage = new HashMap<Coin, Long>();
-	private Map<Coin, Long> changeStorage = new HashMap<Coin, Long>();
+	private Map<Coin, Long> moneyStorage = new TreeMap<Coin, Long>();
+	private Map<Coin, Long> bufferStorage = new TreeMap<Coin, Long>();
+	private Map<Coin, Long> changeStorage = new TreeMap<Coin, Long>();
 	
 	public PaymentMachine() throws Exception {
 		generateInitialMoneyStorage(19995);
@@ -89,7 +89,6 @@ public class PaymentMachine implements PaymentMachineInterface {
 
 			tickets.add(ticket);
 
-			movePayedCoinsToMoneyStorage();
 			clearTemporaryData();
 		}
 	}
@@ -125,29 +124,16 @@ public class PaymentMachine implements PaymentMachineInterface {
 		return this.getPayedAmount() - this.getActualTicket().getAmount();
 	}
 
-	public void generateChangeCoins() throws Exception {
-		long changeAmount = this.calculateChangeAmount();
-
+	public void executePayment() throws Exception {
 		if (!changeStorage.isEmpty()) {
 			throw new ChangeStorageIsNotEmptyException();
 		}
 		
-		if ((changeAmount % Coin.MIN_VALUE.getValue()) != 0) {
+		if ((calculateChangeAmount() % Coin.MIN_VALUE.getValue()) != 0) {
 			throw new InvalidAmountException();
 		}
-		
-		long amount = changeAmount;
-		
-		while (getChangedAmount() < changeAmount) {
-			for (Coin coin : Coin.values()) {
-				if (amount - coin.getValue() >= 0) {
-					amount = amount - coin.getValue();
-					Long pieces = changeStorage.get(coin);
-					changeStorage.put(coin, pieces == null ? 1 : ++pieces);
-					removeCoinFromMoneyStorage(coin);
-				}
-			}
-		}
+
+		movePayedCoinsToMoneyStorageWithChange();
 	}
 
 	public void addCoin(Coin coin) {
@@ -238,34 +224,51 @@ public class PaymentMachine implements PaymentMachineInterface {
 	}
 	
 	
-	private void movePayedCoinsToMoneyStorage() {
+	private void movePayedCoinsToMoneyStorageWithChange() throws Exception {
 		for (Map.Entry<Coin, Long> entry : bufferStorage.entrySet()) {
 			addCoinsToMoneyStorage(entry.getKey(), entry.getValue());
 		}
+
+		long changeAmount = calculateChangeAmount();
+		long amount = changeAmount;
 		
+		while (getChangedAmount() < changeAmount) {
+			for (Coin coin : Coin.values()) {
+				if (amount - coin.getValue() >= 0) {
+					try {
+						Long pieces = changeStorage.get(coin);
+						removeCoinFromMoneyStorage(coin);
+						changeStorage.put(coin, pieces == null ? 1 : ++pieces);
+						amount = amount - coin.getValue();
+					} catch (CoinNotExistException e) {
+					}
+				}
+			}
+		}
+
 		bufferStorage.clear();
 	}
 	
 	private void addCoinsToMoneyStorage(Coin coin, Long pieces) {
-		moneyStorage.put(coin, pieces == null ? 1 : pieces);
+		Long entryPieces = moneyStorage.get(coin);
+		entryPieces = (entryPieces == null) ? 0 : entryPieces;
+		
+		long newPieces = (pieces == null) ? 1 : pieces;
+		newPieces = entryPieces + newPieces;
+
+		moneyStorage.put(coin, newPieces);
 	}
 	
-	private void removeCoinFromMoneyStorage(Coin coin) {
-		long newPieces = 0;
+	private void removeCoinFromMoneyStorage(Coin coin) throws Exception {
+		Long entryPieces = moneyStorage.get(coin);
 		
-		for (Map.Entry<Coin, Long> entry : moneyStorage.entrySet()) {
-			if (entry.getKey().equals(coin)) {
-				Long entryPieces = entry.getValue();
-				newPieces = --entryPieces;  
-			}
+		if (entryPieces == null) {
+			throw new CoinNotExistException();
 		}
+		
+		entryPieces--;
 
-		if (newPieces >= 0) {
-			bufferStorage.remove(coin);
-			if (newPieces  > 0) {
-				bufferStorage.put(coin, newPieces);
-			}
-		}
+		moneyStorage.put(coin, entryPieces);
 	}
 	
 	private void clearTemporaryData() {
@@ -291,8 +294,4 @@ public class PaymentMachine implements PaymentMachineInterface {
 			}
 		}
 	}
-
-
-
-
 }

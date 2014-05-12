@@ -1,8 +1,5 @@
 package com.epam.training.PaymentMachine;
 
-import java.util.HashMap;
-import java.util.Map;
-
 import org.testng.Assert;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
@@ -138,23 +135,64 @@ public class PaymentMachineTest {
 	}
 
 	@Test
-	public void testPaymentChange() throws Exception {
+	public void testChangeAmount() throws Exception {
 		Ticket ticket = new Ticket(1);
-
+		ticket.setAmount(2200);
+		
 		paymentMachine.startPayment(ticket);
 		
-		long oldStorageAmount = paymentMachine.getStorageAmount();
+		paymentMachine.addCoin(Coin.C1000);
+		paymentMachine.addCoin(Coin.C1000);
+		paymentMachine.addCoin(Coin.C500);
+
+		Assert.assertEquals(paymentMachine.getPayedAmount(), 2500);
+		Assert.assertEquals(paymentMachine.calculateChangeAmount(), paymentMachine.getPayedAmount() - ticket.getAmount());
+	}
+	
+	@Test
+	public void testChangedAmount() throws Exception {
+		Ticket ticket = new Ticket(1);
+		ticket.setAmount(2200);
+		
+		paymentMachine.startPayment(ticket);
 		
 		paymentMachine.addCoin(Coin.C1000);
-		paymentMachine.addCoin(Coin.C10000);
+		paymentMachine.addCoin(Coin.C1000);
+		paymentMachine.addCoin(Coin.C500);
 
-		Assert.assertEquals(paymentMachine.getPayedAmount(), 11000);
+		long payedAmount = paymentMachine.getPayedAmount();
 
-		paymentMachine.closePayment();
+		Assert.assertEquals(paymentMachine.getPayedAmount(), 2500);
 
-		Assert.assertEquals(paymentMachine.getStorageAmount() + ticket.getAmount(), oldStorageAmount);
+		paymentMachine.executePayment();
+		
+		Assert.assertEquals(paymentMachine.getChangedAmount(), payedAmount - ticket.getAmount());
+	}
+	
+	@Test
+	public void testExecutePayment() throws Exception {
+		long initialAmount = paymentMachine.getStorageAmount();
+		
+		Ticket ticket = new Ticket(1);
+		ticket.setAmount(2200);
+		
+		paymentMachine.startPayment(ticket);
+		
+		paymentMachine.addCoin(Coin.C1000);
+		paymentMachine.addCoin(Coin.C1000);
+		paymentMachine.addCoin(Coin.C500);
+
+		long payedAmount = paymentMachine.getPayedAmount();
+
+		Assert.assertEquals(paymentMachine.getPayedAmount(), 2500);
+
+		paymentMachine.executePayment();
+		
+		long changeAmount = payedAmount - ticket.getAmount();
+
+		Assert.assertEquals(paymentMachine.getStorageAmount(), initialAmount + payedAmount - changeAmount);
+		Assert.assertEquals(paymentMachine.getChangedAmount(), changeAmount);
 		Assert.assertEquals(paymentMachine.getPayedAmount(), 0);
-		Assert.assertEquals(paymentMachine.getChangedAmount(), 0);
 	}
 	
 }

@@ -54,8 +54,9 @@ public class PaymentMachineRunner {
 				}
 				
 				paymentMachine.printPayedCoins();
+				paymentMachine.printAvailableCoins();
 
-				paymentMachine.generateChangeCoins();
+				paymentMachine.executePayment();
 				
 				paymentMachine.printChangedCoins();
 								

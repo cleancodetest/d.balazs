@@ -5,8 +5,8 @@
     <classes>
       <class name="com.epam.training.PaymentMachine.PaymentMachineTest">
         <methods>
-          <include name="testPaymentChange"/>
           <include name="setup"/>
+          <include name="testExecutePayment"/>
         </methods>
       </class> <!-- com.epam.training.PaymentMachine.PaymentMachineTest -->
     </classes>
